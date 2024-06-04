@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@gui/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@gui/survey": ["libs/survey/src/index.ts"],
+      "@gui/survey-creator": ["libs/survey-creator/src/index.ts"],
+      "@gui/survey-taker": ["libs/survey-taker/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
