@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Model } from 'survey-core';
 import { SurveyModule } from 'survey-angular-ui';
+import { SurveyTakerFacade } from 'libs/survey-taker/src/lib/services';
 
 @Component({
   selector: 'lib-survey-taker',
@@ -12,20 +13,10 @@ import { SurveyModule } from 'survey-angular-ui';
   // styleUrls: ['../../../../../node_modules/survey-core/defaultV2.min.css', './survey-taker.component.css'],
 })
 export class SurveyTakerComponent implements OnInit {
-  surveyJson = {
-    elements: [
-      {
-        name: 'FirstName',
-        title: 'Enter your first name:',
-        type: 'text',
-      },
-      {
-        name: 'LastName',
-        title: 'Enter your last name:',
-        type: 'text',
-      },
-    ],
-  };
+  @Inject()
+  surveyTakerService: SurveyTakerFacade;
+
+  surveyJson = ;
 
   surveyModel!: Model;
   ngOnInit() {
